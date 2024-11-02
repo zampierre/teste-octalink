@@ -5,6 +5,8 @@
   background-color: #333;
   padding: 10px 20px;
   color: white;
+  border-radius: 20px;
+  margin-bottom: 20px;
 }
 
 .menu-logo a {
@@ -73,11 +75,11 @@
     display: none; /* Esconde os itens do menu */
     flex-direction: column; /* Alinha itens verticalmente */
     position: absolute; /* Posiciona os itens */
-    top: 60px; /* Ajuste conforme a altura do menu */
-    left: 0;
+    top: 45px; /* Ajuste conforme a altura do menu */
+    left: 10px;
     background-color: #333;
-    width: 100%;
-    padding: 10px 0;
+    width: 80%;
+    padding: 10px 0 0 10px;
     z-index: 1; /* Coloca o menu acima de outros elementos */
   }
 
