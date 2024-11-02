@@ -10,6 +10,8 @@ import { CadastrarProdutoComponent } from './produtos/cadastrar-produto/cadastra
 import { PesquisarProdutoComponent } from './produtos/pesquisar-produto/pesquisar-produto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,12 +20,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ListarProdutosComponent,
     CadastrarProdutoComponent,
     PesquisarProdutoComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

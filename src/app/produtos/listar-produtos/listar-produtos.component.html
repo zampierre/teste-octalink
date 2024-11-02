@@ -1,22 +1,32 @@
-<!-- src/app/produtos/listar-produtos/listar-produtos.component.html -->
-<table>
+<div class="search-container">
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Pesquisar..." class="search-input" />
+</div>
+
+
+<table class="produto-table">
   <thead>
     <tr>
-      <th>ID</th>
+      <th></th>
       <th>Nome</th>
+      <th>Categoria</th>
       <th>Preço</th>
-      <th>Ações</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let produto of produtos">
-      <td>{{ produto.id }}</td>
-      <td>{{ produto.title }}</td>
-      <td>{{ produto.price | currency }}</td>
-      <td>
-        <button (click)="editarProduto(produto.id)">Editar</button>
-        <button (click)="deletarProduto(produto.id)">Deletar</button>
-      </td>
-    </tr>
+    <ng-container *ngFor="let produto of produtos | filter: searchTerm">
+      <tr class="produto-row">
+        <td>
+          <button class="toggle-button" (click)="produto.showDescription = !produto.showDescription">
+            {{ produto.showDescription ? "▼" : "►" }}
+          </button>
+        </td>
+        <td>{{ produto.title }}</td>
+        <td>{{ produto.category }}</td>
+        <td>{{ produto.price | currency }}</td>
+      </tr>
+      <tr *ngIf="produto.showDescription" class="description-row">
+        <td colspan="4">{{ produto.description }}</td>
+      </tr>
+    </ng-container>
   </tbody>
 </table>

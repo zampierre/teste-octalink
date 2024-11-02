@@ -1,4 +1,3 @@
-// src/app/produtos/listar-produtos/listar-produtos.component.ts
 import { Component, OnInit } from '@angular/core';
 import { ProdutosService } from 'src/app/produtos/produtos.service';
 import { Produto } from '../../models/produto.model';
@@ -10,6 +9,7 @@ import { Produto } from '../../models/produto.model';
 })
 export class ListarProdutosComponent implements OnInit {
   produtos: Produto[] = []; // Inicialize como um array vazio
+  searchTerm: string = ''; // Adicione esta linha para a pesquisa
 
   constructor(private produtosService: ProdutosService) {}
 
@@ -20,7 +20,11 @@ export class ListarProdutosComponent implements OnInit {
   listarProdutos(): void {
     this.produtosService.listarProdutos().subscribe({
       next: (produtos: Produto[]) => {
-        this.produtos = produtos; // Atribua a resposta ao array de produtos
+        // Inicializa a propriedade showDescription
+        this.produtos = produtos.map((produto) => ({
+          ...produto,
+          showDescription: false, // Inicializa a propriedade para controle do dropdown
+        }));
       },
       error: (err: any) => {
         console.error('Erro ao listar produtos:', err); // Exiba erro no console

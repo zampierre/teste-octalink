@@ -1,0 +1,58 @@
+details {
+  margin: 0.5em 0; /* Espaço entre os detalhes */
+}
+
+summary {
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  font-weight: bold; /* Destaca o texto do summary */
+}
+
+.produto-table {
+  width: 100%;
+  border-collapse: collapse; /* Remove o espaço entre as bordas */
+  margin: 1em 0; /* Espaço ao redor da tabela */
+  font-family: Arial, sans-serif; /* Fonte mais limpa */
+}
+
+.produto-table th, .produto-table td {
+  border: 1px solid #ccc; /* Borda leve */
+  padding: 0.8em; /* Espaçamento interno */
+  text-align: left; /* Alinha texto à esquerda */
+}
+
+.produto-table th {
+  background-color: #f4f4f4; /* Cor de fundo dos cabeçalhos */
+  color: #333; /* Cor do texto dos cabeçalhos */
+}
+
+.produto-row:hover {
+  background-color: #e9ecef; /* Cor de fundo ao passar o mouse */
+}
+
+.toggle-button {
+  background: none; /* Remove o fundo do botão */
+  border: none; /* Remove a borda do botão */
+  cursor: pointer; /* Indica que é clicável */
+  font-size: 1em; /* Tamanho do texto */
+  color: #007bff; /* Cor do texto do botão */
+}
+
+.description-row {
+  background-color: #f9f9f9; /* Cor de fundo para a descrição */
+  font-style: italic; /* Estilo de fonte para a descrição */
+}
+
+.search-input {
+  width: 90%; /* Faz o input ocupar toda a largura disponível */
+  padding: 0.5em; /* Espaçamento interno */
+  margin-bottom: 1em; /* Espaço abaixo do input */
+  border: 1px solid #ccc; /* Borda leve */
+  border-radius: 4px; /* Bordas arredondadas */
+  font-size: 1em; /* Tamanho da fonte */
+}
+
+.search-container {
+  display: flex; /* Utiliza Flexbox para alinhamento */
+  justify-content: center; /* Centraliza horizontalmente */
+  margin-bottom: 1em; /* Espaço abaixo do container */
+}
