@@ -1,0 +1,16 @@
+<nav class="menubar">
+  <div class="menu-logo">
+    <a href="/">MeuApp</a>
+  </div>
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
+  <ul class="menu-items" [ngClass]="{ active: isMenuOpen }">
+    <li><a routerLink="/">Início</a></li>
+    <li><a routerLink="/produtos">Listar Produtos</a></li>
+    <li><a routerLink="/produtos/criar">Cadastrar Produto</a></li>
+    <li><a routerLink="/produtos/pesquisar">Pesquisar Produto</a></li>
+  </ul>
+</nav>

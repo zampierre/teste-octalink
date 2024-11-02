@@ -1,0 +1,22 @@
+<!-- src/app/produtos/listar-produtos/listar-produtos.component.html -->
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>Preço</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produto of produtos">
+      <td>{{ produto.id }}</td>
+      <td>{{ produto.title }}</td>
+      <td>{{ produto.price | currency }}</td>
+      <td>
+        <button (click)="editarProduto(produto.id)">Editar</button>
+        <button (click)="deletarProduto(produto.id)">Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

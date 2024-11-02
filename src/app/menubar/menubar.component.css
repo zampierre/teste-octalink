@@ -1,0 +1,92 @@
+.menubar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 20px;
+  color: white;
+}
+
+.menu-logo a {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-items {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+
+.menu-items li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.menu-items li a:hover {
+  color: #ccc;
+}
+
+.menu-auth button {
+  color: white;
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.menu-auth button:hover {
+  background-color: white;
+  color: #333;
+}
+
+/* Estilos para a versão responsiva */
+.menu-toggle {
+  display: none; /* Esconde o botão de menu por padrão */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 4px;
+  width: 25px;
+  background-color: white;
+  margin: 3px 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menubar {
+    justify-content: space-between; /* Mantém o espaço entre os itens */
+  }
+
+  .menu-logo {
+    order: 2; /* Mova o logo para o final */
+    margin-left: auto; /* Margem à esquerda automática para empurrar para a direita */
+  }
+
+  .menu-items {
+    display: none; /* Esconde os itens do menu */
+    flex-direction: column; /* Alinha itens verticalmente */
+    position: absolute; /* Posiciona os itens */
+    top: 60px; /* Ajuste conforme a altura do menu */
+    left: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 10px 0;
+    z-index: 1; /* Coloca o menu acima de outros elementos */
+  }
+
+  .menu-items.active {
+    display: flex; /* Mostra os itens do menu quando ativo */
+  }
+
+  .menu-toggle {
+    display: flex; /* Mostra o botão de menu em telas menores */
+    order: 1; /* Mova o botão para o início */
+  }
+}
