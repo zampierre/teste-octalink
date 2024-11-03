@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'; // Certifique-se de importar 'map'
+import { map } from 'rxjs/operators';
 import { Produto } from '../models/produto.model';
 
 @Injectable({
@@ -19,16 +19,16 @@ export class ProdutosService {
     );
   }
 
-  cadastrarProduto(produto: any): Observable<any> {
-    return this.http.post(`${this.apiURL}/add`, produto);
+  cadastrarProduto(produto: Produto): Observable<Produto> {
+    return this.http.post<Produto>(`${this.apiURL}/add`, produto);
   }
 
-  atualizarProduto(id: number, produto: any): Observable<any> {
-    return this.http.put(`${this.apiURL}/${id}`, produto);
+  atualizarProduto(id: number, produto: Produto): Observable<Produto> {
+    return this.http.put<Produto>(`${this.apiURL}/${id}`, produto);
   }
 
-  deletarProduto(id: number): Observable<any> {
-    return this.http.delete(`${this.apiURL}/${id}`);
+  deletarProduto(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiURL}/${id}`);
   }
 
   pesquisarProduto(query: string): Observable<any> {
